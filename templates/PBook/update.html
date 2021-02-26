@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+update 페이지 입니다.<br>
+<form method="post">{% csrf_token %}
+	이름 : <input type="text" value="{{phonebook.이름}}" name='name'><br>
+	전화번호 : <input type="text" value="{{phonebook.전화번호}}" name='phNum'><br>
+	주소 : <input type="text" value="{{phonebook.주소}}" name='addr'><br>
+	이메일 : <input type="text" value="{{phonebook.이메일}}" name='email'><br>
+	생년월일 : <input type="text" value="{{phonebook.생년월일}}" name='bir'><br>
+	<input type="submit" value="확인"><br>
+</form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+detail 페이지 입니다.<br>
+<table border="1">
+<tr>
+<th>이름</th><th>{{PhoneBook.이름}}</th>
+</tr>
+<tr>
+<th>전화번호</th><th>{{PhoneBook.전화번호}}</th>
+</tr>
+<tr>
+<th>주소</th><th>{{PhoneBook.주소}}</th>
+</tr>
+<tr>
+<th>이메일</th><th>{{PhoneBook.이메일}}</th>
+</tr>
+<tr>
+<th>생년월일</th><th>{{PhoneBook.생년월일}}</th>
+</tr>
+</table>
+id : {{PhoneBook.id}}
+	<!-- <button type="button" 
+	 onclick="location.href='{% url "PB:index" %}'">메인 이동</button><br>  -->
+	 <a href="{% url 'PB:update' PhoneBook.id %}">수정 이동</a><br>
+	 <a href="{% url 'PB:index' %}">메인 이동</a><br>
+
+<ul>
+	이름 : {{PhoneBook.이름}}<br>
+	전화번호 : {{PhoneBook.전화번호}}<br>	
+	주소 : {{PhoneBook.주소}}<br>	
+	이메일 : {{PhoneBook.이메일}}<br>	
+	생년월일 : {{PhoneBook.생년월일}}<br>
+	<a href="{% url 'PB:index' %}">메인 이동</a><br>
+</ul>
+
+생년월일 : {{PhoneBook.생년월일 | date:'Y년 m월 d일'}}<br>
+y : 2자리 년도 표시	<br>
+Y : 4자리 년도 표시<br>
+m : 01 ~ 12월 표시<br>
+M : 1 ~ 12월 표시<br>
+d : 01 ~ 31일 표시<br>
+j : 1 ~ 31일 표시<br>
+
+</body>
+</html>

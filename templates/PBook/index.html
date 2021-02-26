@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+인덱스 페이지 입니다.
+<ul>
+	{% for values in PhoneBook %}
+		<li>{{ values }}</li>
+	{% endfor %}
+</ul>
+<br>
+<ul>
+	{% for values in PhoneBook %}
+		{{ values.id }} {{ values.이름 }} : {{ values.전화번호 }}<br>
+	{% endfor %}
+</ul>
+<br>
+<ul>
+	{% for values in PhoneBook %}
+		<li>{{ values.id }}:
+		 
+		<a href ="{% url 'PB:detail' values.id %}">
+		{{ values.이름 }}
+		</a> 
+		: {{ values.전화번호 }}</li><br>
+	{% endfor %}	
+</ul>
+<!-- <button type="button" 
+					onclick="location.href='{% url 'PB:add' %}'">추가</button><br> -->
+<a href="{% url 'PB:add' %}">추가 페이지 이동</a>						
+</body>
+</html>
